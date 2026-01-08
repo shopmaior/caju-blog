@@ -13,7 +13,7 @@ export default async function BlogPost({
   const post = getPostBySlug(slug);
 
   return (
-    <main className="w-full max-w-5xl mx-auto px-6 py-12">
+    <main id="main-content" className="w-full max-w-5xl mx-auto px-6 py-12">
       <ArticleHeader meta={post.meta} />
 
       <div className="mx-auto mt-8 max-w-3xl">

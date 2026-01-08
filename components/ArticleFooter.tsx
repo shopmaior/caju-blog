@@ -4,9 +4,9 @@ export function ArticleFooter() {
   return (
     <footer className="mt-16 border-t border-border pt-10">
       <div className="bg-gray-50 dark:bg-white/5 p-8 rounded-2xl border border-gray-100 dark:border-white/5 text-center max-w-3xl mx-auto">
-        <p className="text-lg font-semibold text-foreground mb-2">
+        <h2 className="text-lg font-semibold text-foreground mb-2">
           Gostou dessa dica?
-        </p>
+        </h2>
         <p className="text-muted-foreground mb-6">
           Esse conteúdo faz parte do compromisso do{" "}
           <strong className="text-primary">Caju Ofertas</strong> com

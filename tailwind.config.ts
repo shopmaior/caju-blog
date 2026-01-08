@@ -14,12 +14,6 @@ const config: Config = {
       typography: ({ theme }) => ({
         DEFAULT: {
           css: {
-            "--tw-prose-body": theme("colors.slate.700"),
-            "--tw-prose-headings": theme("colors.slate.900"),
-            "--tw-prose-links": theme("colors.primary.DEFAULT"),
-            "--tw-prose-bold": theme("colors.slate.900"),
-            "--tw-prose-quotes": theme("colors.slate.900"),
-
             maxWidth: "72ch",
 
             p: {
@@ -53,15 +47,17 @@ const config: Config = {
               fontStyle: "normal",
               fontWeight: "500",
               borderLeftWidth: "4px",
-              borderLeftColor: theme("colors.primary.DEFAULT"),
-              backgroundColor: theme("colors.slate.50"),
+              borderLeftColor: "var(--primary)",
+              backgroundColor: "var(--muted)",
               paddingLeft: "1.5em",
               paddingTop: "1em",
               paddingBottom: "1em",
+              color: "var(--muted-foreground)",
             },
 
             code: {
-              backgroundColor: theme("colors.slate.100"),
+              backgroundColor: "var(--muted)",
+              color: "var(--foreground)",
               padding: "0.2em 0.4em",
               borderRadius: "0.25rem",
               fontWeight: "500",
