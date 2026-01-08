@@ -18,7 +18,7 @@ export default function Header() {
           </div>
           <div className="flex flex-col">
             <span className="text-lg md:text-xl font-bold tracking-tight text-foreground group-hover:text-primary transition-colors">
-              Blog Caju
+              Blog do Caju
             </span>
             <span className="text-[10px] md:text-xs text-muted-foreground uppercase tracking-wider font-medium">
               Dicas & Ofertas
