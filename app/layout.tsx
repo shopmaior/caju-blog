@@ -2,7 +2,7 @@ import "@/styles/globals.css";
 
 export const metadata = {
   title: "Blog Caju Ofertas",
-  description: "Economia real no dia a dia.",
+  description: "Ofertas e descontos perto de você.",
 };
 
 export default function RootLayout({
