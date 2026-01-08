@@ -1,4 +1,8 @@
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@plugin "@tailwindcss/typography";
 
 :root {
   --background: #ffffff;
@@ -193,4 +197,25 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Improves readability of long articles */
+.prose {
+  text-wrap: pretty;
+}
+
+.prose img {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.prose h2,
+.prose h3 {
+  scroll-margin-top: 6rem;
+}
+
+/* Remove auto-generated quotes from typography */
+.prose blockquote p::before,
+.prose blockquote p::after {
+  content: none;
 }
