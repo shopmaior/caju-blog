@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
 
@@ -18,7 +19,7 @@ interface ArticleCardProps {
 
 export default function ArticleCard({ slug, meta }: ArticleCardProps) {
   // Fallback for image until we have real ones mapped
-  const displayImage = meta.image || "/og/og-image.png";
+  const displayImage = meta.image || "/og/article-cover.png";
 
   return (
     <Link href={`/blog/${slug}`} className="group block h-full">
@@ -26,9 +27,12 @@ export default function ArticleCard({ slug, meta }: ArticleCardProps) {
         {/* Image Container with Overflow Hidden for Zoom Effect */}
         <div className="relative aspect-[16/9] overflow-hidden bg-gray-100 dark:bg-white/5">
           {/* We can use next/image here later with proper config, using standard img for now to avoid domain issues immediately */}
-          <img
+          <Image
             src={displayImage}
             alt={meta.title}
+            width={1440 / 2}
+            height={603 / 2}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

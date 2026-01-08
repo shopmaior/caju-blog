@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
 
@@ -13,7 +14,7 @@ export type ArticleMeta = {
 };
 
 export function ArticleHeader({ meta }: { meta: ArticleMeta }) {
-  const displayImage = meta.image || "/og/og-image.png";
+  const displayImage = meta.image || "/og/article-cover.png";
 
   return (
     <header className="mb-10 max-w-4xl mx-auto">
@@ -58,9 +59,12 @@ export function ArticleHeader({ meta }: { meta: ArticleMeta }) {
 
       {/* Hero Image */}
       <div className="relative aspect-[21/9] w-full overflow-hidden rounded-2xl bg-gray-100 dark:bg-white/5 border border-border shadow-sm">
-        <img
+        <Image
           src={displayImage}
           alt={meta.title}
+          sizes="(max-width: 1440px) 50vw"
+          width={1440}
+          height={675}
           className="object-cover w-full h-full"
         />
       </div>
