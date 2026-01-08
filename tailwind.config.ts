@@ -2,10 +2,12 @@ import type { Config } from "tailwindcss";
 import typography from "@tailwindcss/typography";
 
 const config: Config = {
+  darkMode: "class",
   content: [
-    "./src/app/**/*.{ts,tsx,mdx}",
-    "./src/components/**/*.{ts,tsx}",
-    "./src/content/**/*.{md,mdx}",
+    "./app/**/*.{ts,tsx,mdx}",
+    "./components/**/*.{ts,tsx}",
+    "./content/**/*.{md,mdx}",
+    "./src/**/*.{ts,tsx,mdx}",
   ],
   theme: {
     extend: {

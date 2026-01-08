@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export default function Header() {
   return (
@@ -35,6 +36,7 @@ export default function Header() {
           >
             Ir para o App
           </Link>
+          <ThemeToggle />
         </div>
       </div>
     </header>
