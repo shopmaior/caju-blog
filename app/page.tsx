@@ -14,9 +14,9 @@ export default function BlogHome() {
         {posts.map((post) => (
           <li key={post.slug}>
             <a href={`/blog/${post.slug}`} className="text-xl font-semibold">
-              {post.title}
+              {post.meta.title}
             </a>
-            <p className="text-gray-600">{post.description}</p>
+            <p className="text-gray-600">{post.meta.description}</p>
           </li>
         ))}
       </ul>

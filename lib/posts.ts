@@ -20,11 +20,16 @@ export function getAllPosts(): Post[] {
   return files.map((file) => {
     const slug = file.replace(/\.mdx$/, "");
     const content = fs.readFileSync(path.join(postsDirectory, file), "utf8");
-    const { data } = matter(content);
+    const { data, content: body } = matter(content);
 
     return {
       slug,
-      meta: data,
+      meta: {
+        title: data.title,
+        description: data.description,
+        date: data.date,
+      },
+      body,
     };
   });
 }
@@ -34,5 +39,13 @@ export function getPostBySlug(slug: string): Post {
   const content = fs.readFileSync(filePath, "utf8");
   const { data, content: body } = matter(content);
 
-  return { slug, meta: data, body };
+  return {
+    slug,
+    meta: {
+      title: data.title,
+      description: data.description,
+      date: data.date,
+    },
+    body,
+  };
 }
