@@ -13,7 +13,7 @@ export type ArticleMeta = {
 };
 
 export function ArticleHeader({ meta }: { meta: ArticleMeta }) {
-  const displayImage = meta.image || "";
+  const displayImage = meta.image || "/og/og-image.png";
 
   return (
     <header className="mb-10 max-w-4xl mx-auto">

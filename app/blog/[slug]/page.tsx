@@ -1,6 +1,7 @@
 import { ArticleHeader } from "@/components/ArticleHeader";
 import { ArticleFooter } from "@/components/ArticleFooter";
 import { getPostBySlug } from "@/lib/posts";
+import { MDXRemote } from "next-mdx-remote/rsc";
 
 export default async function BlogPost({
   params,
@@ -15,7 +16,7 @@ export default async function BlogPost({
       <ArticleHeader meta={post.meta} />
 
       <article className="prose prose-lg dark:prose-invert prose-orange mx-auto mt-12 max-w-3xl">
-        {post.body}
+        <MDXRemote source={post.body} />
       </article>
 
       <ArticleFooter />
