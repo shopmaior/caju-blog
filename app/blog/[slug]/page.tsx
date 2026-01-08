@@ -11,10 +11,12 @@ export default async function BlogPost({
   const post = getPostBySlug(slug);
 
   return (
-    <main className="max-w-3xl mx-auto p-6">
+    <main className="w-full max-w-5xl mx-auto px-6 py-12">
       <ArticleHeader meta={post.meta} />
 
-      <article className="prose mt-8">{post.body}</article>
+      <article className="prose prose-lg dark:prose-invert prose-orange mx-auto mt-12 max-w-3xl">
+        {post.body}
+      </article>
 
       <ArticleFooter />
     </main>

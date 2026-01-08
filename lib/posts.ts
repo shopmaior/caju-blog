@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 
-interface Post {
+export interface Post {
   slug: string;
   meta: {
     title: string;
@@ -10,6 +10,8 @@ interface Post {
     date: string;
     category?: string;
     author?: string;
+    image?: string;
+    tags?: string[];
   };
   body: string;
 }
@@ -32,6 +34,8 @@ export function getAllPosts(): Post[] {
         date: data.date,
         category: data.category,
         author: data.author,
+        image: data.image,
+        tags: data.tags,
       },
       body,
     };
@@ -51,6 +55,8 @@ export function getPostBySlug(slug: string): Post {
       date: data.date,
       category: data.category,
       author: data.author,
+      image: data.image,
+      tags: data.tags,
     },
     body,
   };
