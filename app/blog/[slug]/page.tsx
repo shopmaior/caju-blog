@@ -1,3 +1,5 @@
+import { ArticleHeader } from "@/components/ArticleHeader";
+import { ArticleFooter } from "@/components/ArticleFooter";
 import { getPostBySlug } from "@/lib/posts";
 
 export default async function BlogPost({
@@ -10,10 +12,11 @@ export default async function BlogPost({
 
   return (
     <main className="max-w-3xl mx-auto p-6">
-      <h1 className="text-3xl font-bold">{post.meta.title}</h1>
-      <p className="text-gray-600">{post.meta.description}</p>
+      <ArticleHeader meta={post.meta} />
 
-      <article className="prose mt-8 whitespace-pre-wrap">{post.body}</article>
+      <article className="prose mt-8">{post.body}</article>
+
+      <ArticleFooter />
     </main>
   );
 }

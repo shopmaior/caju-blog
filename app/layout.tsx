@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     description: siteDescription,
     images: [
       {
-        url: `/og-image.png`,
+        url: `/og/og-image.png`,
         width: 1200,
         height: 630,
         alt: `${siteName} - Ofertas e Descontos Exclusivos`,
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${siteName} | Ofertas e Descontos Exclusivos`,
     description: siteDescription,
-    images: [`/og-image.png`],
+    images: [`/og/og-image.png`],
   },
 
   // Robots

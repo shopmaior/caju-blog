@@ -8,6 +8,8 @@ interface Post {
     title: string;
     description: string;
     date: string;
+    category?: string;
+    author?: string;
   };
   body: string;
 }
@@ -28,6 +30,8 @@ export function getAllPosts(): Post[] {
         title: data.title,
         description: data.description,
         date: data.date,
+        category: data.category,
+        author: data.author,
       },
       body,
     };
@@ -45,6 +49,8 @@ export function getPostBySlug(slug: string): Post {
       title: data.title,
       description: data.description,
       date: data.date,
+      category: data.category,
+      author: data.author,
     },
     body,
   };

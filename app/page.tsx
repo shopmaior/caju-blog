@@ -6,9 +6,7 @@ export default function BlogHome() {
   return (
     <main className="max-w-3xl mx-auto p-6">
       <h1 className="text-3xl font-bold">Blog Caju Ofertas</h1>
-      <p className="mt-2 text-gray-600">
-        Economia real no dia a dia. Curadoria, não spam.
-      </p>
+      <p className="mt-2 text-gray-600">Ofertas e descontos perto de você</p>
 
       <ul className="mt-8 space-y-6">
         {posts.map((post) => (
