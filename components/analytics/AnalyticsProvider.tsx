@@ -41,7 +41,6 @@ export function AnalyticsProvider() {
           // 3 Initialize GA (still blocked by consent)
           gtag('js', new Date());
           gtag('config', '${GA_ID}', {
-            anonymize_ip: true,
             send_page_view: false
           });
         `,
