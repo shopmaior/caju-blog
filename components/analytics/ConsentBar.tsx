@@ -117,9 +117,7 @@ export function ConsentBar() {
       revealedRef.current = true;
 
       const variant = resolveCopyVariant();
-      if (variant !== "A") {
-        setCopyVariant(variant);
-      }
+      setCopyVariant(variant);
 
       setIsVisible(true);
 
