@@ -2,7 +2,8 @@ import { type Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Política de Privacidade | Caju Ofertas Blog",
-  description: "Entenda como tratamos seus dados no Blog do Caju Ofertas.",
+  description:
+    "Saiba como o Blog do Caju Ofertas trata dados pessoais, cookies e informações de navegação.",
 };
 
 export default function PrivacyPolicyPage() {
@@ -10,70 +11,89 @@ export default function PrivacyPolicyPage() {
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
       <div className="max-w-3xl mx-auto prose dark:prose-invert">
         <h1>Política de Privacidade</h1>
+
         <p className="lead">
-          Sua privacidade é importante para nós. Esta política descreve como o
-          Blog do Caju Ofertas lida com informações.
+          A sua privacidade é importante para nós. Esta Política de Privacidade
+          explica de forma transparente como o Blog do Caju Ofertas trata dados
+          relacionados à navegação dos usuários.
         </p>
 
         <h2>1. Escopo</h2>
         <p>
           Esta política aplica-se exclusivamente ao conteúdo editorial e
-          informativo disponibilizado no Blog do Caju Ofertas. Ela não cobre
-          outros serviços ou plataformas da marca Caju Ofertas que possam ter
-          seus próprios termos.
+          informativo disponibilizado no <strong>Blog do Caju Ofertas</strong>.
+          Outros produtos, serviços ou plataformas da marca Caju Ofertas podem
+          possuir políticas próprias e independentes.
         </p>
 
-        <h2>2. Coleta de Dados e Cookies</h2>
+        <h2>2. Coleta de Dados e Uso de Cookies</h2>
         <p>
-          Este blog é de natureza informativa e não exige cadastro, login ou
-          fornecimento de dados pessoais sensíveis para o consumo de conteúdo.
+          O Blog do Caju Ofertas possui caráter estritamente informativo e não
+          exige cadastro, login ou fornecimento direto de dados pessoais para o
+          acesso ao conteúdo.
         </p>
         <p>
-          Utilizamos cookies e tecnologias similares apenas para fins de{" "}
-          <strong>análise de tráfego (analytics)</strong>, visando entender
-          quais conteúdos são mais relevantes para nossa audiência e melhorar a
-          experiência de leitura.
+          Utilizamos cookies e tecnologias similares exclusivamente para fins de{" "}
+          <strong>análise estatística de navegação (analytics)</strong>, com o
+          objetivo de compreender padrões de uso, identificar conteúdos de maior
+          interesse e aprimorar a experiência de leitura.
         </p>
         <p>
-          Esses dados são coletados de forma agregada e anônima, não permitindo
-          a identificação direta do usuário.
-        </p>
-
-        <h2>3. Consentimento</h2>
-        <p>
-          Ao acessar nosso blog pela primeira vez, você tem a opção de aceitar
-          ou recusar o uso de cookies de análise através de nosso banner de
-          consentimento. Nenhuma coleta estatística é realizada antes do seu
-          consentimento explícito.
-        </p>
-        <p>
-          Você pode alterar sua preferência a qualquer momento limpando os dados
-          de navegação do seu navegador para este site.
+          As informações coletadas são tratadas de forma agregada e, sempre que
+          possível, anonimizadas, não sendo utilizadas para identificação direta
+          ou individualizada dos usuários.
         </p>
 
-        <h2>4. Compartilhamento de Dados</h2>
+        <h2>3. Base Legal e Consentimento</h2>
         <p>
-          Não vendemos, trocamos ou transferimos suas informações pessoais para
-          terceiros. Os dados de análise são processados pelo Google Analytics
-          seguindo rigorosos padrões de segurança e privacidade.
+          O uso de cookies de análise é realizado com base no{" "}
+          <strong>consentimento do usuário</strong>, conforme previsto na Lei
+          Geral de Proteção de Dados (Lei nº 13.709/2018).
+        </p>
+        <p>
+          Nenhuma coleta estatística é iniciada antes da manifestação explícita
+          de consentimento por meio do banner exibido no primeiro acesso ao
+          blog.
+        </p>
+        <p>
+          O usuário pode, a qualquer momento, rever ou revogar esse
+          consentimento por meio das configurações do navegador, incluindo a
+          limpeza de cookies e dados de navegação relacionados a este site.
         </p>
 
-        <h2>5. Seus Direitos (LGPD)</h2>
+        <h2>4. Compartilhamento e Processamento de Dados</h2>
         <p>
-          Conforme a Lei Geral de Proteção de Dados (LGPD), você tem direito a
-          transparência sobre o tratamento de seus dados. Como nosso blog opera
-          com dados minimizados e anonimizados para fins estatísticos, o risco à
-          sua privacidade é extremamente baixo.
+          Não comercializamos, vendemos ou compartilhamos dados pessoais dos
+          usuários com terceiros.
+        </p>
+        <p>
+          As informações de navegação coletadas para fins analíticos podem ser
+          processadas por ferramentas de terceiros, como o Google Analytics,
+          sempre em conformidade com práticas reconhecidas de segurança e
+          privacidade e com configurações voltadas à minimização de dados.
+        </p>
+
+        <h2>5. Direitos do Titular (LGPD)</h2>
+        <p>
+          Nos termos da LGPD, o titular dos dados tem direito à informação clara
+          e transparente sobre o tratamento de seus dados pessoais.
+        </p>
+        <p>
+          Considerando que o Blog do Caju Ofertas opera com coleta limitada,
+          finalidade específica e foco em dados estatísticos e não sensíveis, o
+          impacto à privacidade do usuário é reduzido.
         </p>
 
         <h2>6. Alterações nesta Política</h2>
         <p>
-          Podemos atualizar esta política periodicamente para refletir mudanças
-          em nossas práticas ou por razões operacionais, legais ou regulatórias.
+          Esta Política de Privacidade poderá ser atualizada periodicamente para
+          refletir eventuais mudanças operacionais, legais ou regulatórias.
+          Recomendamos a consulta periódica desta página para manter-se
+          informado.
         </p>
 
         <p className="text-sm text-zinc-500 mt-8">
-          Última atualização: Janeiro de 2025.
+          Última atualização: Janeiro de 2026.
         </p>
       </div>
     </div>
