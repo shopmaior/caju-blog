@@ -78,7 +78,7 @@ function resolveCopyVariant(): CopyVariant {
 
 export function ConsentBar() {
   const [isVisible, setIsVisible] = useState(false);
-  const [copyVariant] = useState<CopyVariant>(resolveCopyVariant);
+  const [copyVariant, setCopyVariant] = useState<CopyVariant>("A");
 
   /* ------------------------------------------------------------------------ */
   /* Consent Resolution & Adaptive Reveal                                     */
@@ -101,7 +101,13 @@ export function ConsentBar() {
     if (consent === "denied") return;
 
     // Adaptive reveal: time OR first real interaction
-    const reveal = () => setIsVisible(true);
+    const reveal = () => {
+      const variant = resolveCopyVariant();
+      if (variant !== "A") {
+        setCopyVariant(variant);
+      }
+      setIsVisible(true);
+    };
 
     const timer = setTimeout(reveal, 3000);
 
