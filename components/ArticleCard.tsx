@@ -26,7 +26,6 @@ export default function ArticleCard({ slug, meta }: ArticleCardProps) {
       <article className="flex flex-col h-full overflow-hidden rounded-2xl bg-white border border-gray-100 shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-primary/20 dark:bg-card dark:border-white/5">
         {/* Image Container with Overflow Hidden for Zoom Effect */}
         <div className="relative aspect-[16/9] overflow-hidden bg-gray-100 dark:bg-white/5">
-          {/* We can use next/image here later with proper config, using standard img for now to avoid domain issues immediately */}
           <Image
             src={displayImage}
             alt={meta.title}
@@ -54,9 +53,9 @@ export default function ArticleCard({ slug, meta }: ArticleCardProps) {
             </time>
           </div>
 
-          <h3 className="text-xl font-bold leading-tight mb-2 text-foreground group-hover:text-primary transition-colors duration-200 line-clamp-2">
+          <h1 className="text-xl font-bold leading-tight mb-2 text-foreground group-hover:text-primary transition-colors duration-200 line-clamp-2">
             {meta.title}
-          </h3>
+          </h1>
 
           <p className="text-muted-foreground text-sm leading-relaxed line-clamp-3 mb-4 flex-grow">
             {meta.description}

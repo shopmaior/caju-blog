@@ -17,7 +17,7 @@
   --secondary-foreground: hsl(0 0% 100%);
   --muted: hsl(45 40% 92%);
   --muted-foreground: hsl(30 10% 35%);
-  --accent: hsl(55 97% 56%);
+  --accent: hsl(55 97% 42%);
   --accent-foreground: hsl(20 20% 15%);
   --destructive: hsl(0 84.2% 60.2%);
   --destructive-foreground: hsl(0 0% 98%);
@@ -94,7 +94,7 @@
   --card: hsl(20 20% 18%);
   --card-foreground: hsl(45 40% 92%);
 
-  --primary: hsl(35 96% 53%);
+  --primary: hsl(35 96% 42%);
   --primary-foreground: hsl(0 0% 100%);
 
   --secondary: hsl(197 93% 35%);
@@ -108,7 +108,7 @@
 
   --border: hsl(20 15% 30%);
   --input: hsl(20 15% 30%);
-  --ring: hsl(35 96% 53%);
+  --ring: hsl(35 96% 42%);
 
   --success: hsl(100 45% 45%);
   --success-foreground: hsl(0 0% 100%);
@@ -177,7 +177,10 @@ body {
   border: 2px solid var(--primary);
 }
 
-.skip-to-content:focus {
+.skip-to-content:focus,
+.skip-to-content:active,
+.skip-to-content:focus-visible,
+.skip-to-content:hover {
   top: 0;
 }
 
