@@ -12,6 +12,27 @@ export function AnalyticsProvider() {
     return null;
   }
 
+  /**
+   * Rationale for using dangerouslySetInnerHTML
+   *
+   * This script must execute a strict, atomic sequence:
+   * 1) Initialize the dataLayer
+   * 2) Set default consent (Consent Mode v2) to "denied"
+   * 3) Load the Google Analytics script
+   * 4) Initialize GA while still blocked by consent
+   *
+   * Splitting these steps across multiple <Script /> components can introduce
+   * race conditions, potentially allowing pageviews or events to be sent
+   * before explicit user consent is applied.
+   *
+   * The injected content is static and fully controlled at build time.
+   * GA_ID is sourced exclusively from a NEXT_PUBLIC_* environment variable
+   * and does not include any user input, which significantly mitigates XSS risk.
+   *
+   * This approach guarantees predictable execution order and LGPD-compliant
+   * behavior without relying on `beforeInteractive`, which is not permitted
+   * outside of _document in the App Router.
+   */
   return (
     <Script
       id="ga-consent-and-init"
