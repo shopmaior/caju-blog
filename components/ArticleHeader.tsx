@@ -10,6 +10,7 @@ export type ArticleMeta = {
   category?: string;
   author?: string;
   image?: string;
+  imageAlt?: string;
   tags?: string[];
 };
 
@@ -61,7 +62,7 @@ export function ArticleHeader({ meta }: { meta: ArticleMeta }) {
       <div className="relative aspect-[21/9] w-full overflow-hidden rounded-2xl bg-gray-100 dark:bg-white/5 border border-border shadow-sm">
         <Image
           src={displayImage}
-          alt={meta.title}
+          alt={meta.imageAlt || meta.title}
           sizes="(max-width: 1440px) 50vw"
           width={1440}
           height={675}

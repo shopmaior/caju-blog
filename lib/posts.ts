@@ -11,6 +11,7 @@ export interface Post {
     category?: string;
     author?: string;
     image?: string;
+    imageAlt?: string;
     tags?: string[];
   };
   body: string;
@@ -35,6 +36,7 @@ export function getAllPosts(): Post[] {
         category: data.category,
         author: data.author,
         image: data.image,
+        imageAlt: data.imageAlt,
         tags: data.tags,
       },
       body,
@@ -56,6 +58,7 @@ export function getPostBySlug(slug: string): Post {
       category: data.category,
       author: data.author,
       image: data.image,
+      imageAlt: data.imageAlt,
       tags: data.tags,
     },
     body,
