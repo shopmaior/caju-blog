@@ -19,10 +19,16 @@ const COPY_VARIANT_COOKIE = "consent_copy_variant";
 function getCookie(name: string): string | undefined {
   if (typeof document === "undefined") return undefined;
 
-  return document.cookie
-    .split("; ")
-    .find((row) => row.startsWith(name + "="))
-    ?.split("=")[1];
+  const cookies = document.cookie ? document.cookie.split("; ") : [];
+
+  for (const cookie of cookies) {
+    const [key, ...valueParts] = cookie.split("=");
+    if (key === name) {
+      return decodeURIComponent(valueParts.join("="));
+    }
+  }
+
+  return undefined;
 }
 
 function setCookie(
