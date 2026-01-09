@@ -105,9 +105,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <a href="#main-content" className="skip-to-content">
-            Saltar para o conteúdo
-          </a>
+          <div id="skip">
+            <a href="#main-content" className="skip-to-content">
+              Saltar para o conteúdo
+            </a>
+          </div>
           <Header />
           {children}
           <Footer />

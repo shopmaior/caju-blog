@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Brand Column */}
           <div className="space-y-4">
-            <h3 className="text-lg font-bold text-foreground">Caju Ofertas</h3>
+            <h1 className="text-lg font-bold text-foreground">Caju Ofertas</h1>
             <p className="text-sm text-muted-foreground max-w-xs leading-relaxed">
               Sua plataforma de economia inteligente. Encontre as melhores
               ofertas e descontos perto de você.
@@ -18,9 +18,9 @@ export default function Footer() {
 
           {/* Links Column */}
           <div className="space-y-4">
-            <h4 className="text-sm font-semibold text-foreground uppercase tracking-wider">
+            <h2 className="text-sm font-semibold text-foreground uppercase tracking-wider">
               Links Úteis
-            </h4>
+            </h2>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
                 <Link href="/" className="hover:text-primary transition-colors">
@@ -48,9 +48,9 @@ export default function Footer() {
 
           {/* Legal / Social Column */}
           <div className="space-y-4">
-            <h4 className="text-sm font-semibold text-foreground uppercase tracking-wider">
+            <h2 className="text-sm font-semibold text-foreground uppercase tracking-wider">
               Legal
-            </h4>
+            </h2>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
                 <Link

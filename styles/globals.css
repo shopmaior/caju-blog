@@ -4,6 +4,10 @@
 @tailwind utilities;
 @plugin "@tailwindcss/typography";
 
+@variant dark (&:is(.dark *));
+@variant light (&:is(.light *));
+
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -17,7 +21,7 @@
   --secondary-foreground: hsl(0 0% 100%);
   --muted: hsl(45 40% 92%);
   --muted-foreground: hsl(30 10% 35%);
-  --accent: hsl(55 97% 56%);
+  --accent: hsl(55 97% 42%);
   --accent-foreground: hsl(20 20% 15%);
   --destructive: hsl(0 84.2% 60.2%);
   --destructive-foreground: hsl(0 0% 98%);
@@ -38,6 +42,8 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  --tw-prose-hr: hsl(20 15% 30%);
 }
 
 @theme inline {
@@ -94,7 +100,7 @@
   --card: hsl(20 20% 18%);
   --card-foreground: hsl(45 40% 92%);
 
-  --primary: hsl(35 96% 53%);
+  --primary: hsl(35 96% 42%);
   --primary-foreground: hsl(0 0% 100%);
 
   --secondary: hsl(197 93% 35%);
@@ -108,7 +114,7 @@
 
   --border: hsl(20 15% 30%);
   --input: hsl(20 15% 30%);
-  --ring: hsl(35 96% 53%);
+  --ring: hsl(35 96% 42%);
 
   --success: hsl(100 45% 45%);
   --success-foreground: hsl(0 0% 100%);
@@ -177,8 +183,21 @@ body {
   border: 2px solid var(--primary);
 }
 
-.skip-to-content:focus {
+.skip-to-content:focus,
+.skip-to-content:active,
+.skip-to-content:focus-visible,
+.skip-to-content:hover {
   top: 0;
+}
+
+@utility prose-caju {
+  :root {
+    --tw-prose-hr: var(--color-border);
+  }
+
+  .dark {
+    --tw-prose-hr: var(--color-border);
+  }
 }
 
 /* === Typography color reset (critical) === */
@@ -200,6 +219,10 @@ body {
 
 .dark .prose {
   color: var(--foreground);
+}
+
+.prose hr {
+  border-color: var(--border);
 }
 
 /* Improves readability of long articles */
