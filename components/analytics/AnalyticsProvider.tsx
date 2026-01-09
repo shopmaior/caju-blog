@@ -4,10 +4,22 @@ import Script from "next/script";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
+function isValidGAId(id: string | undefined): boolean {
+  if (!id) return false;
+  // Accept common GA patterns like "G-XXXX" (GA4) or "UA-XXXX" (Universal Analytics)
+  return /^(G|UA)-[A-Z0-9]+/i.test(id);
+}
+
 export function AnalyticsProvider() {
-  if (!GA_ID) {
+  if (!isValidGAId(GA_ID)) {
     if (process.env.NODE_ENV === "development") {
-      console.warn("NEXT_PUBLIC_GA_ID is not defined.");
+      if (!GA_ID) {
+        console.warn("NEXT_PUBLIC_GA_ID is not defined.");
+      } else {
+        console.warn(
+          `NEXT_PUBLIC_GA_ID "${GA_ID}" does not appear to be a valid Google Analytics tracking ID.`
+        );
+      }
     }
     return null;
   }
