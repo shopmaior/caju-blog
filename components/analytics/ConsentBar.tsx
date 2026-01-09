@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 
 /* -------------------------------------------------------------------------- */
@@ -90,6 +90,8 @@ export function ConsentBar() {
   const [isVisible, setIsVisible] = useState(false);
   const [copyVariant, setCopyVariant] = useState<CopyVariant>("A");
 
+  const revealedRef = useRef(false);
+
   /* ------------------------------------------------------------------------ */
   /* Consent Resolution & Adaptive Reveal                                     */
   /* ------------------------------------------------------------------------ */
@@ -110,13 +112,21 @@ export function ConsentBar() {
     // If already denied, do nothing
     if (consent === "denied") return;
 
-    // Adaptive reveal: time OR first real interaction
     const reveal = () => {
+      if (revealedRef.current) return;
+      revealedRef.current = true;
+
       const variant = resolveCopyVariant();
       if (variant !== "A") {
         setCopyVariant(variant);
       }
+
       setIsVisible(true);
+
+      clearTimeout(timer);
+      window.removeEventListener("scroll", reveal);
+      window.removeEventListener("mousemove", reveal);
+      window.removeEventListener("touchstart", reveal);
     };
 
     const timer = setTimeout(reveal, 3000);
@@ -138,8 +148,9 @@ export function ConsentBar() {
   /* ------------------------------------------------------------------------ */
 
   const accept = () => {
-    window.gtag?.("consent", "update", {
-      analytics_storage: "granted",
+    window.gtag?.("event", "consent_granted", {
+      source: "banner",
+      variant: copyVariant,
     });
 
     setCookie(CONSENT_COOKIE, "granted");
