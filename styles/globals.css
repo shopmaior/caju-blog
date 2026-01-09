@@ -4,6 +4,10 @@
 @tailwind utilities;
 @plugin "@tailwindcss/typography";
 
+@variant dark (&:is(.dark *));
+@variant light (&:is(.light *));
+
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
