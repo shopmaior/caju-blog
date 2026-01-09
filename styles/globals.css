@@ -190,6 +190,16 @@ body {
   top: 0;
 }
 
+@utility prose-caju {
+  :root {
+    --tw-prose-hr: var(--color-border);
+  }
+
+  .dark {
+    --tw-prose-hr: var(--color-border);
+  }
+}
+
 /* === Typography color reset (critical) === */
 .prose {
   color: var(--foreground);
