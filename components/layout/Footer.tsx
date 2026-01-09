@@ -53,12 +53,18 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
-                <Link href="#" className="hover:text-primary transition-colors">
+                <Link
+                  href="/politica-de-privacidade"
+                  className="hover:text-primary transition-colors"
+                >
                   Política de Privacidade
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-primary transition-colors">
+                <Link
+                  href="/termos-de-uso"
+                  className="hover:text-primary transition-colors"
+                >
                   Termos de Uso
                 </Link>
               </li>

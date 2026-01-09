@@ -1,6 +1,6 @@
-import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react";
-import { GA_ID } from "@/lib/analytics";
+import { AnalyticsProvider } from "@/components/analytics/AnalyticsProvider";
+import { ConsentBar } from "@/components/analytics/ConsentBar";
 
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -96,30 +96,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
-      <head>
-        {/* Google tag (gtag.js) */}
-        {GA_ID && (
-          <>
-            <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-              strategy="afterInteractive"
-            />
-            <Script id="ga-init" strategy="afterInteractive">
-              {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-
-                gtag('config', '${GA_ID}', {
-                  anonymize_ip: true,
-                  send_page_view: true,
-                });
-              `}
-            </Script>
-          </>
-        )}
-      </head>
+      <head />
       <body className="antialiased">
+        <AnalyticsProvider />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -132,6 +111,7 @@ export default function RootLayout({
           <Header />
           {children}
           <Footer />
+          <ConsentBar />
         </ThemeProvider>
         <Analytics />
       </body>

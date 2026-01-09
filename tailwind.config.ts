@@ -71,11 +71,11 @@ const config: Config = {
 
         invert: {
           css: {
-            "--tw-prose-body": theme("colors.slate.300"),
-            "--tw-prose-headings": theme("colors.white"),
-            "--tw-prose-links": theme("colors.primary.DEFAULT"),
-            "--tw-prose-bold": theme("colors.white"),
-            "--tw-prose-quotes": theme("colors.white"),
+            // "--tw-prose-body": theme("colors.slate.300"),
+            // "--tw-prose-headings": theme("colors.white"),
+            // "--tw-prose-links": theme("colors.primary.DEFAULT"),
+            // "--tw-prose-bold": theme("colors.white"),
+            // "--tw-prose-quotes": theme("colors.white"),
 
             blockquote: {
               backgroundColor: "rgba(255,255,255,0.05)",
