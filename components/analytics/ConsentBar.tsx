@@ -32,7 +32,11 @@ function setCookie(
 ) {
   if (typeof document === "undefined") return;
 
-  document.cookie = `${name}=${value}; path=/; max-age=${maxAgeSeconds}; SameSite=Lax`;
+  const isSecure =
+    typeof window !== "undefined" && window.location.protocol === "https:";
+  const secureAttribute = isSecure ? "; Secure" : "";
+
+  document.cookie = `${name}=${value}; path=/; max-age=${maxAgeSeconds}; SameSite=Lax${secureAttribute}`;
 }
 
 /* -------------------------------------------------------------------------- */
