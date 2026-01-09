@@ -153,7 +153,11 @@ export function ConsentBar() {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 border-t border-zinc-200 dark:border-zinc-800 bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md shadow-lg animate-in slide-in-from-bottom duration-500">
+    <div
+      className="fixed bottom-0 left-0 right-0 z-50 border-t border-zinc-200 dark:border-zinc-800 bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md shadow-lg animate-in slide-in-from-bottom duration-500"
+      role="region"
+      aria-label="Cookie consent"
+    >
       <div className="mx-auto max-w-7xl px-4 py-4 md:px-6 md:py-5 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
         <p className="text-sm text-zinc-600 dark:text-zinc-300 max-w-2xl text-center md:text-left">
           {COPY[copyVariant].text}{" "}
@@ -168,6 +172,7 @@ export function ConsentBar() {
         <div className="flex items-center justify-center md:justify-end gap-3 shrink-0">
           <button
             onClick={reject}
+            type="button"
             className="text-sm font-medium text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors"
           >
             Rejeitar
@@ -175,6 +180,7 @@ export function ConsentBar() {
 
           <button
             onClick={accept}
+            type="button"
             className="rounded-md bg-zinc-200 px-4 py-2 text-sm font-medium text-zinc-900 hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700 transition-colors"
           >
             Aceitar
