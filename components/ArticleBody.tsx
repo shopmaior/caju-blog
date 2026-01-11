@@ -63,7 +63,7 @@ export default function ArticleBody({
               key={size}
               onClick={() => changeSize(size)}
               aria-label={getLabel(size)}
-              className={`w-8 h-8 rounded-full text-sm font-medium ${
+              className={`w-8 h-8 rounded-full text-${size} font-medium ${
                 fontSize === size ? "bg-primary text-white" : "hover:bg-muted"
               }`}
             >
