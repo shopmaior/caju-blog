@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
+import { ShareButtons } from "./ShareButtons";
 
 export type ArticleMeta = {
   title: string;
@@ -43,19 +44,23 @@ export function ArticleHeader({ meta }: { meta: ArticleMeta }) {
       </div>
 
       {/* Author & Date */}
-      <div className="flex items-center justify-center gap-4 text-sm text-gray-500 mb-8 border-b border-gray-100 dark:border-white/10 pb-8">
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">
-            {meta.author ? meta.author[0] : "C"}
+      <div className="flex flex-col items-center gap-6 mb-8 border-b border-gray-100 dark:border-white/10 pb-8 text-center">
+        <div className="flex items-center justify-center gap-4 text-sm text-gray-500">
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">
+              {meta.author ? meta.author[0] : "C"}
+            </div>
+            <span className="font-medium text-foreground">
+              {meta.author || "Equipe Caju Ofertas"}
+            </span>
           </div>
-          <span className="font-medium text-foreground">
-            {meta.author || "Equipe Caju Ofertas"}
-          </span>
+          <span className="w-1 h-1 rounded-full bg-gray-300" />
+          <time dateTime={meta.date}>
+            {format(new Date(meta.date), "d 'de' MMMM, yyyy", { locale: ptBR })}
+          </time>
         </div>
-        <span className="w-1 h-1 rounded-full bg-gray-300" />
-        <time dateTime={meta.date}>
-          {format(new Date(meta.date), "d 'de' MMMM, yyyy", { locale: ptBR })}
-        </time>
+
+        <ShareButtons title={meta.title} />
       </div>
 
       {/* Hero Image */}

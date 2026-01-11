@@ -23,7 +23,7 @@ export default async function BlogPost({
         </ArticleBody>
       </div>
 
-      <ArticleFooter />
+      <ArticleFooter title={post.meta.title} />
     </main>
   );
 }
