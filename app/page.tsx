@@ -23,7 +23,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: SITE_NAME,
     title: `${SITE_NAME} | Ofertas e Descontos Exclusivos`,
     description: SITE_DESCRIPTION,
     images: [`/og/og-image.png`],
