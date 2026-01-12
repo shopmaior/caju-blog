@@ -64,3 +64,8 @@ export function getPostBySlug(slug: string): Post {
     body,
   };
 }
+export function getRandomPost(): Post | null {
+  const posts = getAllPosts();
+  if (posts.length === 0) return null;
+  return posts[Math.floor(Math.random() * posts.length)];
+}

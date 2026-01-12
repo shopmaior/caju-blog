@@ -1,7 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
+import { getRandomPost } from "@/lib/posts";
+
+export const dynamic = "force-dynamic";
 
 export default function NotFound() {
+  const randomPost = getRandomPost();
+
   return (
     <main className="min-h-[70vh] flex flex-col items-center justify-center px-6 py-20 text-center relative overflow-hidden">
       {/* Background patterns/effects */}
@@ -49,12 +54,14 @@ export default function NotFound() {
           >
             Voltar para o Início
           </Link>
-          <Link
-            href="/blog"
-            className="px-8 py-4 bg-secondary text-secondary-foreground font-bold rounded-2xl hover:bg-secondary/90 transition-all transform hover:scale-105 shadow-lg shadow-secondary/25 w-full sm:w-auto"
-          >
-            Explorar o Blog
-          </Link>
+          {randomPost && (
+            <Link
+              href={`/blog/${randomPost.slug}`}
+              className="px-8 py-4 bg-secondary text-secondary-foreground font-bold rounded-2xl hover:bg-secondary/90 transition-all transform hover:scale-105 shadow-lg shadow-secondary/25 w-full sm:w-auto"
+            >
+              Surpreenda-me ✨
+            </Link>
+          )}
         </div>
       </div>
     </main>
