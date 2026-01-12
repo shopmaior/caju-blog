@@ -14,39 +14,16 @@ const siteName = "Blog Caju Ofertas";
 const siteDescription = "Ofertas e descontos perto de você.";
 
 export const metadata: Metadata = {
-  title: siteName,
+  title: {
+    default: siteName,
+    template: `%s | ${siteName}`,
+  },
   description: siteDescription,
 
   // Canonical
   metadataBase: new URL(siteUrl),
   alternates: {
     canonical: "/",
-  },
-
-  // Open Graph (Facebook, LinkedIn, WhatsApp)
-  openGraph: {
-    type: "website",
-    locale: "pt_BR",
-    url: siteUrl,
-    siteName: siteName,
-    title: `${siteName} | Ofertas e Descontos Exclusivos`,
-    description: siteDescription,
-    images: [
-      {
-        url: `/og/og-image.png`,
-        width: 1200,
-        height: 630,
-        alt: `${siteName} - Ofertas e Descontos Exclusivos`,
-      },
-    ],
-  },
-
-  // Twitter Cards
-  twitter: {
-    card: "summary_large_image",
-    title: `${siteName} | Ofertas e Descontos Exclusivos`,
-    description: siteDescription,
-    images: [`/og/og-image.png`],
   },
 
   // Robots
