@@ -4,7 +4,9 @@ import { Metadata } from "next";
 import { SITE_NAME, SITE_DESCRIPTION } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: `${SITE_NAME} | Ofertas e Descontos Exclusivos`,
+  title: {
+    absolute: `${SITE_NAME} | Ofertas e Descontos Exclusivos`,
+  },
   description: SITE_DESCRIPTION,
   openGraph: {
     siteName: SITE_NAME,
