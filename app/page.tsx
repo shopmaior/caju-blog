@@ -12,9 +12,9 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     title: `${SITE_NAME} | Ofertas e Descontos Exclusivos`,
     description: SITE_DESCRIPTION,
-    url: `${SITE_URL}`,
+    url: SITE_URL,
     type: "website",
-    locale: "pt-BR",
+    locale: "pt_BR",
     images: [
       {
         url: `${SITE_URL}/og/og-image.png`,
