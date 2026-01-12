@@ -1,5 +1,36 @@
 import { getAllPosts } from "@/lib/posts";
 import ArticleCard from "@/components/ArticleCard";
+import { Metadata } from "next";
+import { SITE_NAME, SITE_DESCRIPTION, SITE_URL } from "@/lib/seo";
+
+export const metadata: Metadata = {
+  title: {
+    absolute: `${SITE_NAME} | Ofertas e Descontos Exclusivos`,
+  },
+  description: SITE_DESCRIPTION,
+  openGraph: {
+    siteName: SITE_NAME,
+    title: `${SITE_NAME} | Ofertas e Descontos Exclusivos`,
+    description: SITE_DESCRIPTION,
+    url: SITE_URL,
+    type: "website",
+    locale: "pt_BR",
+    images: [
+      {
+        url: `${SITE_URL}/og/og-image.png`,
+        width: 1200,
+        height: 630,
+        alt: `${SITE_NAME} - Ofertas e Descontos Exclusivos`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${SITE_NAME} | Ofertas e Descontos Exclusivos`,
+    description: SITE_DESCRIPTION,
+    images: [`${SITE_URL}/og/og-image.png`],
+  },
+};
 
 export default function BlogHome() {
   const posts = getAllPosts();

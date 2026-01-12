@@ -4,6 +4,7 @@ import ArticleBody from "@/components/ArticleBody";
 import { getPostBySlug } from "@/lib/posts";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { Metadata } from "next";
+import { SITE_NAME } from "@/lib/seo";
 
 export default async function BlogPost({
   params,
@@ -42,6 +43,7 @@ export async function generateMetadata({
     title: post.meta.title,
     description: post.meta.description,
     openGraph: {
+      siteName: SITE_NAME,
       title: post.meta.title,
       description: post.meta.description,
       type: "article",
