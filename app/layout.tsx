@@ -8,20 +8,17 @@ import "@/styles/globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import type { Metadata } from "next";
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://blog.cajuofertas.com.br";
-const siteName = "Blog Caju Ofertas";
-const siteDescription = "Ofertas e descontos perto de você.";
+import { SITE_NAME, SITE_DESCRIPTION, SITE_URL } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: {
-    default: siteName,
-    template: `%s | ${siteName}`,
+    default: SITE_NAME,
+    template: `%s | ${SITE_NAME}`,
   },
-  description: siteDescription,
+  description: SITE_DESCRIPTION,
 
   // Canonical
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(SITE_URL),
   alternates: {
     canonical: "/",
   },

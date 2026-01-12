@@ -1,29 +1,29 @@
 import { getAllPosts } from "@/lib/posts";
 import ArticleCard from "@/components/ArticleCard";
 import { Metadata } from "next";
-
-const siteName = "Blog Caju Ofertas";
-const siteDescription = "Ofertas e descontos perto de você.";
+import { SITE_NAME, SITE_DESCRIPTION } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: `${siteName} | Ofertas e Descontos Exclusivos`,
-  description: siteDescription,
+  title: `${SITE_NAME} | Ofertas e Descontos Exclusivos`,
+  description: SITE_DESCRIPTION,
   openGraph: {
-    title: `${siteName} | Ofertas e Descontos Exclusivos`,
-    description: siteDescription,
+    siteName: SITE_NAME,
+    title: `${SITE_NAME} | Ofertas e Descontos Exclusivos`,
+    description: SITE_DESCRIPTION,
     images: [
       {
         url: `/og/og-image.png`,
         width: 1200,
         height: 630,
-        alt: `${siteName} - Ofertas e Descontos Exclusivos`,
+        alt: `${SITE_NAME} - Ofertas e Descontos Exclusivos`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteName} | Ofertas e Descontos Exclusivos`,
-    description: siteDescription,
+    site: SITE_NAME,
+    title: `${SITE_NAME} | Ofertas e Descontos Exclusivos`,
+    description: SITE_DESCRIPTION,
     images: [`/og/og-image.png`],
   },
 };
