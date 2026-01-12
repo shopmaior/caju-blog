@@ -1,7 +1,7 @@
 import { getAllPosts } from "@/lib/posts";
 import ArticleCard from "@/components/ArticleCard";
 import { Metadata } from "next";
-import { SITE_NAME, SITE_DESCRIPTION } from "@/lib/seo";
+import { SITE_NAME, SITE_DESCRIPTION, SITE_URL } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: {
@@ -12,9 +12,12 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     title: `${SITE_NAME} | Ofertas e Descontos Exclusivos`,
     description: SITE_DESCRIPTION,
+    url: `${SITE_URL}`,
+    type: "website",
+    locale: "pt-BR",
     images: [
       {
-        url: `/og/og-image.png`,
+        url: `${SITE_URL}/og/og-image.png`,
         width: 1200,
         height: 630,
         alt: `${SITE_NAME} - Ofertas e Descontos Exclusivos`,
@@ -25,7 +28,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${SITE_NAME} | Ofertas e Descontos Exclusivos`,
     description: SITE_DESCRIPTION,
-    images: [`/og/og-image.png`],
+    images: [`${SITE_URL}/og/og-image.png`],
   },
 };
 
