@@ -15,8 +15,18 @@ export type ArticleMeta = {
   tags?: string[];
 };
 
+function getAuthorImage({
+  author = "cajuzim",
+}: {
+  author?: string | undefined;
+}) {
+  const authorName = author?.toLowerCase().replace(" ", "-").trim();
+  return `/authors/${authorName}.png`;
+}
+
 export function ArticleHeader({ meta }: { meta: ArticleMeta }) {
   const displayImage = meta.image || "/og/article-cover.png";
+  const authorImage = getAuthorImage({ author: meta.author });
 
   return (
     <header className="mb-10 max-w-4xl mx-auto">
@@ -48,7 +58,19 @@ export function ArticleHeader({ meta }: { meta: ArticleMeta }) {
         <div className="flex items-center justify-center gap-4 text-sm text-gray-500">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">
-              {meta.author ? meta.author[0] : "C"}
+              {authorImage ? (
+                <Image
+                  src={authorImage}
+                  alt={meta.author || "Equipe Caju Ofertas"}
+                  width={32}
+                  height={32}
+                  className="rounded-full"
+                />
+              ) : meta.author ? (
+                meta.author[0]
+              ) : (
+                "C"
+              )}
             </div>
             <span className="font-medium text-foreground">
               {meta.author || "Equipe Caju Ofertas"}
